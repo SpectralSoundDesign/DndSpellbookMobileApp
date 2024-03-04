@@ -6411,4 +6411,9 @@ const data = [{
 "oaths": "Devotion"
 }]
 
+const updatedData = data.map((spell, index) => {
+    spell.id = index + 1
+    return spell
+})
+
 export default data

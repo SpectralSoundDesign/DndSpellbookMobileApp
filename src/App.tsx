@@ -1,20 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import * as React from 'react';
 import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Home from './screens/home/Home.tsx';
 import Search from './screens/search/Search.tsx';
+import Details from './screens/details/Details.tsx';
 
-
+const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
+
+function DetailsStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#161616',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    >
+      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Details" component={Details} />
+    </Stack.Navigator>
+  );
+}
 
 function MyTabs() {
   return (
@@ -36,27 +50,16 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Search"
-        component={Search}
+        name="DetailsStack"
+        component={DetailsStack}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: 'Details',
           tabBarIcon: ({ color, focused }) => (
             focused ? <Image source={require('../assets/search-selected.png')} style={{ width: 20, height: 20 }} /> :
               <Image source={require('../assets/search-unselected.png')} style={{ width: 20, height: 20 }} />
           ),
         }}
       />
-      {/*<Tab.Screen
-        name="Saved"
-        component={Saved}
-        options={{
-          tabBarLabel: 'Saved',
-          tabBarIcon: ({ color, focused }) => (
-            focused ? <Image source={require('../assets/bookmark-selected.png')} style={{ width: 20, height: 20 }} /> :
-              <Image source={require('../assets/bookmark-unselected.png')} style={{ width: 20, height: 20 }} />
-          ),
-        }}
-      />*/}
     </Tab.Navigator>
   );
 }
@@ -70,4 +73,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
