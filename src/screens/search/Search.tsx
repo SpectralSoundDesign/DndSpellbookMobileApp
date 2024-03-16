@@ -3,7 +3,7 @@ import { Text, View, Image, StyleSheet, FlatList, TouchableOpacity } from 'react
 import { useNavigation } from '@react-navigation/native';
 import SearchBar from 'react-native-dynamic-search-bar';
 import data from '../../data/spell_data.tsx'
-import Card from '../../components/Card.tsx'
+import Card from '../../components/SpellCard.tsx'
 
 function Search() {
   const navigation = useNavigation();

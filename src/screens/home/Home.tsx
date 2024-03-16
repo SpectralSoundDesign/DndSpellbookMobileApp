@@ -1,12 +1,21 @@
 import * as React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 
 function Home() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#161616' }}>
+      <View style={styles.container}>
         <Text>Home!</Text>
       </View>
     );
   }
 
-  export default Home;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#161616'
+    }
+});
+
+export default Home;

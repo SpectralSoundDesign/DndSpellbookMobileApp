@@ -6,20 +6,6 @@ function Details() {
     const route = useRoute();
     const { spell } = route.params;
 
-    {/*}"name": "Zone of Truth",
-    "desc": "You create a magical zone that guards against deception in a 15-foot-radius sphere centered on a point of your choice within range. Until the spell ends, a creature that enters the spell’s area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can’t speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw.An affected creature is aware of the fate and can avoid answering questions she would normally have responded with a lie. Such a creature can remain evasive in his answers as they remain within the limits of truth.",
-    "page": "phb 289",
-    "range":"60 feet",
-    "components": "V, S",
-    "ritual": "no",
-    "duration": "10 minutes",
-    "concentration": "no",
-    "casting_time":"1 action",
-    "level": "2nd-level",
-    "school": "Enchantment",
-    "class": "Bard, Cleric, Paladin",
-    "oaths": "Devotion"*/}
-
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{spell.name}</Text>

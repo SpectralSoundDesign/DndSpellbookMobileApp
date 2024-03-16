@@ -7,6 +7,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Home from './screens/home/Home.tsx';
 import Search from './screens/search/Search.tsx';
 import Details from './screens/details/Details.tsx';
+import Welcome from './screens/welcome/Welcome.tsx';
+import CharacterSelect from './screens/characterSelect/CharacterSelect.tsx';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -53,7 +55,7 @@ function MyTabs() {
         name="DetailsStack"
         component={DetailsStack}
         options={{
-          tabBarLabel: 'Details',
+          tabBarLabel: 'Spell Lookup',
           tabBarIcon: ({ color, focused }) => (
             focused ? <Image source={require('../assets/search-selected.png')} style={{ width: 20, height: 20 }} /> :
               <Image source={require('../assets/search-unselected.png')} style={{ width: 20, height: 20 }} />
@@ -68,7 +70,11 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <MyTabs />
+        <Stack.Navigator>
+            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="CharacterSelect" component={CharacterSelect} />
+            <Stack.Screen name="MyTabs" component={MyTabs} />
+        </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
   );
