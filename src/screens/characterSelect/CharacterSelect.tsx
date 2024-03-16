@@ -43,7 +43,7 @@ function CharacterSelect({ navigation }) {
               <FlatList
                 data={characters}
                 renderItem={({ item }) => (
-                <TouchableOpacity style={styles.listItemContainer} onPress={console.log("Tap")}>
+                <TouchableOpacity style={styles.listItemContainer} onPress={() => navigation.navigate('MyTabs')}>
                   <Card
                     name={item.name}
                     level={item.level}
@@ -58,10 +58,6 @@ function CharacterSelect({ navigation }) {
                 key={numColumns.toString()}
               />
         </View>
-          <Button
-            title="Go to Home"
-            onPress={() => navigation.navigate('MyTabs')}
-          />
       </View>
     );
   }

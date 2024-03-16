@@ -26,7 +26,7 @@ function DetailsStack() {
         },
       }}
     >
-      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
       <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   );
